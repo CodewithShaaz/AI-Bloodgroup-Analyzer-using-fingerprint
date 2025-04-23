@@ -44,7 +44,10 @@ The trained CNN demonstrates high classification accuracy and robustness, showin
 - Explore hybrid or ensemble models  
 - Integration into mobile or embedded systems for real-world application
 
-[![Watch the video](bloodgroup_detector.png)](https://youtu.be/wnKKdwa-VIM)
-<a href="https://youtu.be/wnKKdwa-VIM">
-    <img src="bloodgroup_detector.jpfdg" alt="Watch the video" width="600">
-</a>
+## 🖼️ Demo Images
+
+<p align="center">
+  <img src="images/Screenshot 2025-04-24 013628" width="200" alt="Sample 1"/>
+  <img src="images/sample2.png" width="200" alt="Sample 2"/>
+  <img src="images/sample3.png" width="200" alt="Sample 3"/>
+</p>
