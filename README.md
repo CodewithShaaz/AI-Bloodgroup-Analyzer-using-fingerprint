@@ -84,14 +84,6 @@ The trained CNN demonstrates high classification accuracy and robustness, showin
 
 ---
 
-## 📌 Future Scope
-
-- Expand dataset diversity for improved generalization
-- Explore hybrid or ensemble models
-- Integration into mobile or embedded systems for real-world application
-
----
-
 ## 🖼️ Demo Images
 
 
