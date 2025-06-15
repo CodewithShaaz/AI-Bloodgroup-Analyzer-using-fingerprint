@@ -1,0 +1,43 @@
+# Byte-compiled and optimized files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution / build artifacts
+/build/
+/dist/
+*.egg-info/
+
+# Database files
+users.db
+*.db
+
+# Folders for generated output
+/OutputImg/
+/uploads/
+
+# Large data and model files
+# These are often large and should be managed with Git LFS or stored separately.
+/Model/
+Model.pth
+/Test Images/
+/videos/
+
+# Virtual environment folder (e.g., venv, .venv, env)
+/venv/
+/.venv/
+/env/
+
+# IDE and editor configuration files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
