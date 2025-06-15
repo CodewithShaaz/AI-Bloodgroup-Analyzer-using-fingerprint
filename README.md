@@ -52,7 +52,7 @@ You will need to have Python 3.x and Pip installed on your system.
 
 4.  **Download the Pre-trained Model:**
     The trained model is not stored on GitHub. Please download it from the link below and place the `Model.pth` file inside the `Model/` directory.
-    > **Download Link:** [sha256:8c7e1969e42b7911ffddd1de57a96d16fb8a2d4ec50942bfbd2ed0b1135319af]
+    > **Download Link:** [https://github.com/CodewithShaaz/AI-Bloodgroup-Analyzer-using-fingerprint/releases/download/v1.0.0/Model.pth]
 
 ### Usage
 
