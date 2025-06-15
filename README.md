@@ -95,7 +95,7 @@ The trained CNN demonstrates high classification accuracy and robustness, showin
 ## 🖼️ Demo Images
 
 <p align="center">
-  <img src="images/1(1).png" width="800" alt="Sample 1"/>
+  <img src="images/1.png" width="800" alt="Sample 1"/>
   <img src="images/Screenshot%202025-04-24%20013646.png" width="800" alt="Sample 2"/>
   <img src="images/Screenshot%202025-04-24%20013657.png" width="800" alt="Sample 3"/>
   <img src="images/Screenshot%202025-04-24%20013716.png" width="800" alt="Sample 4"/>
