@@ -1,105 +1,205 @@
-# 🔬 Blood Group Detection Using Fingerprint Image Processing
+# 🔬 AI Blood Group Analyzer Using Fingerprint
+![Demo Video](images/BloodGroup.gif)
 
-This project presents a novel deep learning approach for blood group detection using fingerprint images. Leveraging convolutional neural networks (CNNs), the model identifies blood types (A, B, AB, O – including Rh factors) by analyzing ridge patterns in fingerprint images.
+An AI-powered web application that detects blood groups (A+, A-, B+, B-, AB+, AB-, O+, O-) from fingerprint images using deep learning. Built with PyTorch and Flask, this project provides a complete user authentication system and intuitive web interface for blood group prediction.
 
 ---
 
 ## 🚀 Key Features
 
-- 🧠 CNN-based model trained on a labeled dataset of fingerprint images
-- 📈 High accuracy, precision, and recall in blood group classification
-- 🧪 Uses data augmentation to improve model generalization
-- ⚡ Fast, non-invasive alternative to traditional chemical-based tests
-- 🏥 Ideal for point-of-care diagnostics and resource-limited settings
+- 🧠 **Custom CNN Model**: SimpleCNN architecture with 2 convolutional layers trained on fingerprint dataset
+- 🔐 **User Authentication**: Complete signup/login system with password hashing using SQLite database
+- 🌐 **Web Interface**: Modern, responsive Flask web application with multiple pages
+- 📊 **Blood Group Classification**: Supports all 8 blood types (A+, A-, B+, B-, AB+, AB-, O+, O-)
+- 🖼️ **Image Upload**: Easy-to-use interface for uploading fingerprint images
+- ⚡ **Real-time Prediction**: Instant blood group detection using trained PyTorch model
 
 ---
 
-## 🔍 Technologies Used
+## 🔍 Technologies & Stack
 
-- **Python**
-- **PyTorch**
-- **OpenCV**
-- **Flask**
-- **NumPy & Pandas**
+**Backend:**
+- Python 3.x
+- Flask (Web Framework)
+- PyTorch (Deep Learning)
+- SQLite (Database)
+- Werkzeug Security (Password Hashing)
+
+**Frontend:**
+- HTML/CSS/JavaScript
+- Bootstrap 5
+- Bootstrap Icons
+- AOS (Animate On Scroll)
+- GLightbox
+- Swiper
+- Typed.js
+
+**Machine Learning:**
+- PyTorch
+- torchvision
+- PIL (Image Processing)
+- Custom SimpleCNN Architecture
 
 ---
 
-## 🚀 How to Set Up and Run This Project
+## 📁 Project Structure
 
-To get a local copy up and running, follow these simple steps.
+```
+Blood/
+├── Code/
+│   ├── app.py                      # Main Flask application
+│   ├── Model.pth                   # Trained PyTorch model
+│   ├── Training_Code.ipynb         # Model training notebook
+│   ├── dataset_blood_group/        # Training dataset (8 classes)
+│   │   ├── A+/
+│   │   ├── A-/
+│   │   ├── AB+/
+│   │   ├── AB-/
+│   │   ├── B+/
+│   │   ├── B-/
+│   │   ├── O+/
+│   │   └── O-/
+│   ├── templates/                  # HTML templates
+│   │   ├── hospitalhomepage.html
+│   │   ├── login.html
+│   │   ├── signup.html
+│   │   ├── login2.html            # Prediction page
+│   │   ├── result.html
+│   │   ├── about.html
+│   │   ├── chart.html
+│   │   └── team.html
+│   ├── static/                     # Static assets
+│   │   ├── css/
+│   │   ├── js/
+│   │   ├── uploads/               # User uploaded images
+│   │   └── vendor/                # Third-party libraries
+│   └── Test Images/               # Sample test images
+├── images/                         # Demo screenshots
+└── README.md
+```
+
+---
+
+## 🚀 Installation & Setup
 
 ### Prerequisites
 
-You will need to have Python 3.x and Pip installed on your system.
+- Python 3.7 or higher
+- pip (Python package manager)
 
-### Installation & Setup
+### Step-by-Step Setup
 
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/CodewithShaaz/AI-Bloodgroup-Analyzer-using-fingerprint.git](https://github.com/CodewithShaaz/AI-Bloodgroup-Analyzer-using-fingerprint.git)
-    ```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CodewithShaaz/AI-Bloodgroup-Analyzer-using-fingerprint.git
+   cd AI-Bloodgroup-Analyzer-using-fingerprint
+   ```
 
-2.  **Navigate to the project directory:**
-    ```sh
-    cd AI-Bloodgroup-Analyzer-using-fingerprint
-    ```
+2. **Install required dependencies:**
+   ```bash
+   pip install flask torch torchvision pillow flask-wtf wtforms
+   ```
 
-3.  **Install the required libraries:**
-    First, ensure you have a `requirements.txt` file in your repository. If not, create one by running `pip freeze > requirements.txt` in your terminal and pushing it to GitHub. Then, run the following command:
-    ```sh
-    pip install -r requirements.txt
-    ```
+3. **Navigate to the Code directory:**
+   ```bash
+   cd Code
+   ```
 
-4.  **Download the Pre-trained Model:**
-    The trained model is not stored on GitHub. Please download it from the link below and place the `Model.pth` file inside the `Model/` directory.
-    > **Download Link:** [https://github.com/CodewithShaaz/AI-Bloodgroup-Analyzer-using-fingerprint/releases/download/v1.0.0/Model.pth]
+4. **Ensure Model.pth exists:**
+   - The trained model (`Model.pth`) should be present in the `Code/` directory
+   - If missing, you'll need to train the model using `Training_Code.ipynb`
 
-### Usage
+5. **Run the Flask application:**
+   ```bash
+   python app.py
+   ```
 
-1.  **Navigate to the application folder:**
-    ```sh
-    cd Code
-    ```
-
-2.  **Run the Flask application:**
-    ```sh
-    python app.py
-    ```
-
-3.  Open your web browser and go to the address shown in your terminal (usually `http://127.0.0.1:5000`) to use the application.
+6. **Access the application:**
+   - Open your browser and navigate to: `http://127.0.0.1:5000`
+   - The database (`users.db`) will be created automatically on first run
 
 ---
 
-## 📁 Dataset
+## 💡 How to Use
 
-The model was trained on a curated dataset of fingerprint images tagged with corresponding blood group labels:
-- **Blood Types:** A, B, AB, O
-- **Rh Factors:** Positive (+), Negative (−)
-
----
-
-## 📊 Results
-
-The trained CNN demonstrates high classification accuracy and robustness, showing that fingerprint ridge patterns can serve as biometric indicators for blood group detection.
+1. **Homepage**: Visit the landing page at `http://127.0.0.1:5000`
+2. **Sign Up**: Create a new account with your details
+3. **Login**: Access your account using credentials
+4. **Upload Image**: Navigate to the prediction page and upload a fingerprint image
+5. **Get Results**: View the predicted blood group instantly
 
 ---
 
-## 📌 Future Scope
+## 🧠 Model Architecture
 
-- Expand dataset diversity for improved generalization
-- Explore hybrid or ensemble models
-- Integration into mobile or embedded systems for real-world application
+**SimpleCNN Details:**
+- **Input**: 224×224 RGB fingerprint images
+- **Conv Layer 1**: 3→32 channels, 3×3 kernel
+- **Conv Layer 2**: 32→64 channels, 3×3 kernel
+- **Pooling**: MaxPool2d (2×2)
+- **FC Layer 1**: 64×56×56 → 512
+- **FC Layer 2**: 512 → 8 (output classes)
+- **Optimizer**: SGD with momentum (0.9), learning rate 0.001
+- **Loss Function**: CrossEntropyLoss
+- **Training**: 25 epochs with 80/20 train-validation split
 
 ---
 
-## 🖼️ Demo Images
+## 📊 Dataset
 
-<p align="center">
-  <img src="images/1.png" width="800" alt="Sample 1"/>
-  <img src="images/Screenshot%202025-04-24%20013646.png" width="800" alt="Sample 2"/>
-  <img src="images/Screenshot%202025-04-24%20013657.png" width="800" alt="Sample 3"/>
-  <img src="images/Screenshot%202025-04-24%20013716.png" width="800" alt="Sample 4"/>
-  <img src="images/Screenshot%202025-04-24%20013730.png" width="800" alt="Sample 5"/>
-  <img src="images/Screenshot%202025-04-24%20013739.png" width="800" alt="Sample 6"/>
-  <img src="images/Screenshot%202025-04-24%20013750.png" width="800" alt="Sample 7"/>
-</p>
+The model was trained on a fingerprint dataset organized into 8 classes:
+- **A+, A-, B+, B-, AB+, AB-, O+, O-**
+- Images preprocessed to 224×224 resolution
+- Normalized using ImageNet statistics
+- Data split: 80% training, 20% validation
+
+---
+
+## 🔒 Security Features
+
+- Password hashing using `pbkdf2:sha256`
+- Session-based authentication
+- Protected routes requiring login
+- Secure database operations with SQLite
+- Flash messages for user feedback
+
+---
+
+## 🌐 Application Routes
+
+| Route | Method | Description |
+|-------|--------|-------------|
+| `/` | GET | Homepage |
+| `/signup` | GET, POST | User registration |
+| `/login` | GET, POST | User authentication |
+| `/logout` | GET | End user session |
+| `/predict_blood_group` | GET | Upload page (protected) |
+| `/predict` | POST | Process image & predict |
+| `/about` | GET | About page |
+| `/chart` | GET | Charts page |
+| `/team` | GET | Team page |
+
+---
+
+## 📌 Future Enhancements
+
+- Improve model accuracy with larger, diverse datasets
+- Add result history and user dashboard
+- Implement REST API for mobile integration
+- Deploy to cloud platforms (AWS, Azure, Heroku)
+- Add real-time camera capture for fingerprint scanning
+- Multi-language support
+- Export results as PDF
+
+---
+
+## 👨‍💻 Author
+
+**CodewithShaaz**
+- GitHub: [@CodewithShaaz](https://github.com/CodewithShaaz)
+
+---
+
+## 📄 License
+
+This project is open source and available for educational purposes.
